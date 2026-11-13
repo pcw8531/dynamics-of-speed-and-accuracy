@@ -21,7 +21,8 @@ authors:
       Department of Physical Education, Seoul National University,
       Seoul, Republic of Korea
 license: MIT
-version: 1.0.0
+version: 1.0.1
+doi: 10.5281/zenodo.24184851
 date-released: 2026-11-13
 url: >-
   https://github.com/pcw8531/dynamics-of-speed-and-accuracy

@@ -1,5 +1,6 @@
 # The Dynamics of Speed and Accuracy: Motor Coupling and the Slopes of the Classical Laws
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24184851.svg)](https://doi.org/10.5281/zenodo.24184851)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](requirements.txt)
 
@@ -47,7 +48,8 @@ CC BY 4.0, and the values derived from the open datasets keep the terms of their
 
 ## Citation
 
-Please cite the paper. **Cite this repository**, on the right of this page, gives the citation of the code and data.
+Please cite the paper. The DOI [10.5281/zenodo.24184851](https://doi.org/10.5281/zenodo.24184851) cites every version of
+this repository, and **Cite this repository**, on the right of this page, gives the citation of the code and data.
 
 <details>
 <summary>All commands, in order</summary>
