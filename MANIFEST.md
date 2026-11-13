@@ -7,7 +7,7 @@ them. Group 3 is cited by repository and commit.
 ## 1. Uploaded with this repository
 
 These are files made for this article and small enough to hold here. Values derived from the open datasets keep
-the terms of their source, as LICENSE states.
+the terms of their source, as the section Licence of the data below sets out.
 
 - code/: sim_practice.py (minimal model, Figure 4), sim_full.py (full model, Figures 5 and 11, Section S5.3), sim_lambda.py
   (directed practice, Section S5.3), urn_check.py (Section S3.2), sim_static_cases.py (the classical laws in one
@@ -67,3 +67,21 @@ The classical papers (Woodworth, 1899; Hick, 1952; Hyman, 1953; Fitts, 1954; Mow
   commit 0660a649f5e0 (Zenodo 10.5281/zenodo.21789488). Figure 2 and Supplemental Figure S1 import its generators, and
   the musculoskeletal value is taken from it.
 - py-c3d, the C3D reader used in the karate test: github.com/EmbodiedCognition/py-c3d, commit b3060462bf35, MIT.
+
+## Licence of the data
+
+The MIT licence in LICENSE covers the code. It does not cover the data, the figures or the outputs.
+
+The values made for this article are released under CC BY 4.0. These are the values transcribed from published tables and figures in data/transcribed and data/read_from_figures, each with its source in data/REGISTRY.md, the output of their check in data/check_transcriptions_result.txt, the outputs of the simulations in sim_out, and the images in figures.
+
+The values derived from the open datasets keep the terms of their source.
+
+data/open_extracted/p2_per_typist.csv and p4_per_typist.csv, their copies in analysis/ and the outputs in analysis/ computed from the same dataset derive from Feit AM, Weir D, Oulasvirta A, "How we type: Movement strategies and performance in everyday typing", Zenodo, doi:10.5281/zenodo.4047775, released under CC BY-NC 4.0. They are shared here under CC BY-NC 4.0.
+
+data/open_extracted/throwing_per_session.csv and throwing_per_throw.csv, their copies in analysis/ and the outputs in analysis/ computed from the same dataset derive from Ozkaya G et al., "Three-dimensional motion capture data during repetitive overarm throwing practice", figshare, doi:10.6084/m9.figshare.c.4017808, released under CC BY 4.0. They are shared here under CC BY 4.0.
+
+data/open_extracted/karate_per_athlete.csv and karate_per_recording.csv, their copies in analysis/ and the outputs in analysis/ computed from the same dataset derive from Szczęsna A, Błaszczyszyn M, Pawlyta M, "Optical motion capture dataset of selected techniques in beginner and advanced Kyokushin karate athletes", figshare, doi:10.6084/m9.figshare.c.4981073, released under CC BY 4.0. They are shared here under CC BY 4.0.
+
+data/open_extracted/p5_mean_curve.csv and its copy in analysis/ hold 30 mean scores derived from the records of Stafford T, Dewar M, axongame, github.com/tomstafford/axongame, whose repository states no licence for the data. They are given so that the analysis can be checked, and the records themselves are not redistributed.
+
+No raw file of these datasets is copied here. data/REGISTRY.md and data/checksums give where to obtain each file and its SHA-256.
