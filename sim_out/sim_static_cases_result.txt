@@ -1,0 +1,7 @@
+Coupling at step 1,000: run 28 of 300, H = 3.0056 bits (mean of the runs 3.0055); step 0, H = 4.3219
+Command bits, blocks of 3: L(0) = 4.3253, L(1000) = 3.0158; H(1000)/H(0) = 0.6954, L(1000)/L(0) = 0.6972
+Calibration at step 0: Hick a = 226.4 ms, beta = 34.03 ms per command bit; Hyman a = 215.0, beta = 34.24; Fitts a0 = 180, log2(D/E0) = 1.766, beta = 21.89
+Hick  slope at step 0  147.9, at step 1,000  103.1 ms per bit; ratio 0.6971 (95% of repetitions 0.6920 to 0.7020)
+Hyman slope at step 0  147.8, at step 1,000  103.1 ms per bit; ratio 0.6971 (95% of repetitions 0.6899 to 0.7043)
+Fitts slope at step 0   94.7, at step 1,000   66.0 ms per bit; ratio 0.6975 (95% of repetitions 0.6923 to 0.7029)
+T = 3000 trials per condition, R = 200 repetitions, blocks of 3

@@ -1,0 +1,5 @@
+Fixed condition of the full model, N = 20, elimination from step 200, 300 runs, mean H in bits (and the slope beta H, ms per bit)
+lambda = 0.0 : H(0) = 4.322, H(200) = 4.077, H(500) = 4.015, H(1000) = 3.918  (slope 94.7 -> 85.9)
+lambda = 0.25: H(0) = 4.322, H(200) = 4.052, H(500) = 3.927, H(1000) = 3.664  (slope 94.7 -> 80.3)
+lambda = 0.5 : H(0) = 4.322, H(200) = 3.976, H(500) = 3.668, H(1000) = 3.005  (slope 94.7 -> 65.9)
+lambda = 1.0 : H(0) = 4.322, H(200) = 3.738, H(500) = 2.962, H(1000) = 1.946  (slope 94.7 -> 42.6)

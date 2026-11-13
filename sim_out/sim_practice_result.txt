@@ -1,0 +1,12 @@
+random   H(0)=4.322  H(100)=4.277  H(500)=4.310  H(2000)=4.319
+pa       H(0)=4.322  H(100)=4.091  H(500)=4.071  H(2000)=4.079
+fitness  H(0)=4.322  H(100)=4.036  H(500)=3.886  H(2000)=3.717
+late element joining at 50: strongest at step 3000 in 87% of runs
+late element joining at 200: strongest at step 3000 in 6% of runs
+late element joining at 200: strongest at step 3000 in 3% of 100 runs
+late element joining at 200: strongest at step 6000 in 27% of 100 runs
+late element joining at 200: strongest at step 15000 in 73% of 100 runs
+random MT(0)=391.6 MT(2000)=391.3 ms
+pa MT(0)=391.6 MT(2000)=370.3 ms
+fitness MT(0)=391.6 MT(2000)=338.6 ms
+beta = 21.911516786229193

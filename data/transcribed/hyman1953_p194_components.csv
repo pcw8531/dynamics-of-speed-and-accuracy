@@ -1,0 +1,4 @@
+participant,experiment,condition,component,probability,information_bits,rt_observed_ms,rt_predicted_ms,source
+G.C.,II,3,frequent light,13/16,0.30,306,258,"Hyman (1953), p. 194"
+G.C.,II,3,each rare light,3/16,4.00,585,824,"Hyman (1953), p. 194"
+G.C.,II,3,condition mean,1,0.99,361,363,"Hyman (1953), p. 194"

@@ -1,0 +1,6 @@
+run started 2026-11-04T07:41:56Z
+identities 5293; share with d > 0 = 0.6291 [0.6160, 0.6420], one-sided p = 7.97e-80
+median g1 = 5410.6, median g2 = 1786.3, median d = 3208.9
+verdict: support
+average curve, Equation 18: S_inf = 41315, R = 31405, alpha = 0.275 [0.240, 0.308] (1000 resamples converged)
+exit 0

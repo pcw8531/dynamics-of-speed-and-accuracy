@@ -1,0 +1,7 @@
+Network models, N = 1000, mean degree 4, 20 runs each, seed 20261109. Means over runs, with the smallest and largest run in brackets.
+
+ring lattice  mean degree 4.00 [4.00, 4.00], largest/mean 1.0 [1.0, 1.0], clustering 0.500 [0.500, 0.500], path 125.38 [125.38, 125.38], log2 N - H 0.000 [0.000, 0.000] bits
+random        mean degree 3.97 [3.84, 4.10], largest/mean 3.1 [2.7, 4.0], clustering 0.003 [0.001, 0.006], path 5.13 [5.00, 5.24], log2 N - H 0.192 [0.167, 0.208] bits
+small world   mean degree 4.00 [4.00, 4.00], largest/mean 1.7 [1.5, 2.0], clustering 0.374 [0.363, 0.395], path 8.90 [8.48, 9.60], log2 N - H 0.017 [0.013, 0.019] bits
+preferential  mean degree 3.99 [3.99, 3.99], largest/mean 20.4 [14.0, 32.8], clustering 0.028 [0.016, 0.036], path 4.07 [3.98, 4.17], log2 N - H 0.538 [0.508, 0.581] bits, hub joined at step median 1, latest 6
+with fitness  mean degree 3.99 [3.99, 3.99], largest/mean 29.4 [15.5, 51.8], clustering 0.036 [0.020, 0.055], path 3.96 [3.75, 4.14], log2 N - H 0.596 [0.522, 0.663] bits, hub joined at step median 3, latest 26

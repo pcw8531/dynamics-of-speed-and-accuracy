@@ -1,0 +1,2 @@
+Figure 4: seed 116, shares at step 2,000 [0.465 0.187 0.348] (mean of 300 runs [0.466 0.185 0.35 ]), H 3.716 bits, 2020 links
+Figure 5: seed 4, shares at step 3,000 [0.989 0.011 0.   ] (mean of 300 runs [0.989 0.011 0.   ]), H 1.668 bits, 219 links, 14 elements without links

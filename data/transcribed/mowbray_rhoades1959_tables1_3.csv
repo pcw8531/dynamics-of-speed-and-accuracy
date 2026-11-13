@@ -1,0 +1,15 @@
+table,source,period_or_trial,choices,mean_rt_ms,n_reactions,error_pct
+I,Leonard (1954) as tabled,May,3,261,1152,
+I,Leonard (1954) as tabled,May,6,323,575,
+I,Leonard (1954) as tabled,September,3,268,576,
+I,Leonard (1954) as tabled,September,6,319,576,
+I,Leonard (1954) as tabled,December,3,249,1152,
+I,Leonard (1954) as tabled,December,6,294,1104,
+III,Mowbray and Rhoades,1,2,,,1.5
+III,Mowbray and Rhoades,1,4,,,0.8
+III,Mowbray and Rhoades,5,2,,,1.6
+III,Mowbray and Rhoades,5,4,,,0.6
+III,Mowbray and Rhoades,10,2,,,1.0
+III,Mowbray and Rhoades,10,4,,,0.6
+III,Mowbray and Rhoades,15,2,,,0.3
+III,Mowbray and Rhoades,15,4,,,0.4

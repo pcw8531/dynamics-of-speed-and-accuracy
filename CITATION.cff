@@ -1,0 +1,112 @@
+cff-version: 1.2.0
+title: >-
+  The Dynamics of Speed and Accuracy: Motor Coupling and the Slopes of the
+  Classical Laws. Code and data.
+message: If you use this software or these data, please cite the paper.
+type: software
+abstract: >-
+  Code and derived data behind the paper. The simulations of the minimal and
+  the full model of practice, the classical laws of Hick, Hyman and Fitts and
+  the impulse-variability equation as static cases of one simulated performer,
+  the values transcribed from the published records, the plan, script and
+  output of each analysis of four open datasets, one script and one notebook
+  for each figure, and every output as run. No data were collected for this
+  study, and every measured value comes from a published table or figure or
+  from a released dataset.
+authors:
+  - family-names: Park
+    given-names: Chulwook
+    orcid: https://orcid.org/0000-0001-8714-5760
+    affiliation: >-
+      Department of Physical Education, Seoul National University,
+      Seoul, Republic of Korea
+license: MIT
+version: 1.0.0
+date-released: 2026-11-13
+url: >-
+  https://github.com/pcw8531/dynamics-of-speed-and-accuracy
+repository-code: >-
+  https://github.com/pcw8531/dynamics-of-speed-and-accuracy
+keywords:
+  - motor control and learning
+  - speed-accuracy trade-off
+  - preferential attachment
+  - averaged information
+  - information theory
+  - skill acquisition
+references:
+  - type: software
+    title: >-
+      Average information across a network quantifies what a coordinative
+      structure achieves in motor control. Code and data.
+    authors:
+      - family-names: Park
+        given-names: Chulwook
+    doi: 10.5281/zenodo.21789488
+    license: MIT
+  - type: data
+    title: >-
+      How we type: Movement strategies and performance in everyday typing
+    authors:
+      - family-names: Feit
+        given-names: A. M.
+      - family-names: Weir
+        given-names: D.
+      - family-names: Oulasvirta
+        given-names: A.
+    doi: 10.5281/zenodo.4047775
+    license: CC-BY-NC-4.0
+  - type: article
+    title: >-
+      Three-dimensional motion capture data during repetitive overarm throwing
+      practice
+    authors:
+      - family-names: Ozkaya
+        given-names: G.
+      - family-names: Jung
+        given-names: H. R.
+      - family-names: Jeong
+        given-names: I. S.
+      - family-names: Choi
+        given-names: M. R.
+      - family-names: Shin
+        given-names: M. Y.
+      - family-names: Lin
+        given-names: X.
+      - family-names: Heo
+        given-names: W. S.
+      - family-names: Kim
+        given-names: M. S.
+      - family-names: Kim
+        given-names: E.
+      - family-names: Lee
+        given-names: K.-K.
+    journal: Scientific Data
+    volume: 5
+    year: 2018
+    doi: 10.1038/sdata.2018.272
+    notes: Data at doi 10.6084/m9.figshare.c.4017808, CC BY 4.0.
+  - type: data
+    title: >-
+      Optical motion capture dataset of selected techniques in beginner and
+      advanced Kyokushin karate athletes
+    authors:
+      - family-names: Szczęsna
+        given-names: A.
+      - family-names: Błaszczyszyn
+        given-names: M.
+      - family-names: Pawlyta
+        given-names: M.
+    doi: 10.6084/m9.figshare.c.4981073
+    license: CC-BY-4.0
+  - type: data
+    title: axongame
+    authors:
+      - family-names: Stafford
+        given-names: T.
+      - family-names: Dewar
+        given-names: M.
+    repository-code: https://github.com/tomstafford/axongame
+    notes: >-
+      The records data_by_cookie.json, used at commit 58c163a895cf, carry no
+      stated data licence and are not redistributed here.

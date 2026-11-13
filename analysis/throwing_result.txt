@@ -1,0 +1,54 @@
+run started 2026-11-04T13:43:11Z
+clean throws readable 2294; body markers in all 58; kept 57; dropped ['R5MC']
+throws analysed 2117; N = 57 markers; links per network 171; ceiling log2 N = 5.8329
+
+Primary: slope of session mean H per session (bits), per subject and side
+side          DP      NDP
+subject                  
+1        0.00025  0.00787
+2       -0.00187 -0.00194
+3       -0.00522  0.00350
+4       -0.00209 -0.00106
+5        0.01375  0.00890
+6       -0.00151  0.00076
+7       -0.00243  0.00282
+mean over sides: [0.00406, -0.0019, -0.00086, -0.00157, 0.01133, -0.00038, 0.00019]
+one-sided Wilcoxon (slope < 0): W = 14.0, p = 0.5312; two-sided p = 1.0000
+verdict: undecided
+
+Secondary: Spearman rho(H, ball speed) per subject and side
+side        DP    NDP
+subject              
+1        0.048  0.144
+2       -0.076 -0.070
+3        0.403 -0.015
+4       -0.083 -0.008
+5        0.462  0.441
+6       -0.030  0.103
+7       -0.055  0.004
+mean over sides: [0.096, -0.073, 0.194, -0.046, 0.452, 0.036, -0.025]; one-sided Wilcoxon (rho < 0): p = 0.8516
+
+Secondary: mean H over sessions, dominant against non-dominant
+side         DP     NDP
+subject                
+1        5.5477  5.4986
+2        5.5325  5.4792
+3        5.4124  5.4007
+4        5.5018  5.4606
+5        5.4990  5.4397
+6        5.5308  5.4985
+7        5.5409  5.5759
+one-sided paired Wilcoxon (DP < NDP): p = 0.9766
+
+Practice check: slope of session mean ball speed per session
+side        DP    NDP
+subject              
+1        1.687  0.037
+2        0.428  0.214
+3       -0.506 -0.382
+4        0.914  0.860
+5        0.513  0.440
+6        0.309  0.324
+7        0.438  0.082
+exit 0
+run ended 2026-11-04T13:47:34Z

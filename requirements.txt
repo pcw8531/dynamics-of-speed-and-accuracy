@@ -1,0 +1,10 @@
+# Versions with which every figure, panel and notebook of this repository was produced (Python 3.13)
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.5
+networkx==3.7
+matplotlib==3.11.2
+pillow==12.3.0
+# needed only for the analyses of the throwing and karate datasets
+openpyxl==3.1.5
+# py-c3d, from github.com/EmbodiedCognition/py-c3d at commit b3060462bf35, read by analysis/karate_test.py

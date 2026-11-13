@@ -1,0 +1,15 @@
+Fitts Table 1: Id = log2(2A/W) in all 16 rows: True
+Fitts Table 1, 1oz: Id/t matches printed Ip within 0.03 bits/s: True (largest gap 0.005)
+Fitts Table 1, 1lb: Id/t matches printed Ip within 0.03 bits/s: True (largest gap 0.006)
+Fitts Table 1, 1oz: least-squares line MT = 12.8 + 94.7 ID ms, r = 0.9831; matches MacKenzie (1992): True
+Fitts Table 1: printed ranks follow Ip (1oz, 1lb): True, True
+fitts1954_table2.csv: Id = log2(2A/W) True; Id/t matches Ip within 0.03 True (largest gap 0.007); ranks follow Ip True
+fitts1954_table3.csv: Id = log2(2A/W) True; Id/t matches Ip within 0.03 True (largest gap 0.006); ranks follow Ip True
+Mowbray and Rhoades Table I: six minus three choices = [62.0, 51.0, 45.0], matches printed 62, 51, 45: True
+Mowbray and Rhoades Table II: 12 cells, trials 1-3 and 13-15, two and four choices: True
+Woodworth Tables I-IV: 80 cells, 2 blank as in the original: True
+Hyman Figure 1, G.C., Exp. I: readings A and B within 1.0 ms; bits read within 0.011 of text; r = 0.993 vs .991 printed: True
+Hyman Figure 1, G.C., Exp. II and III: readings A and B within 3.3 ms; bits read within 0.053 of Tables 1 and 2; r = 0.987 and 0.973 vs .989 and .972 printed; all 24, r = 0.985 vs .985 printed: True
+Hyman Tables 1 and 2: 16 conditions, probabilities sum to 1 and give the printed bits within 0.01: True
+Hyman p. 194, Exp. II Cond. 3: weighted means 358.3 observed and 364.1 predicted vs 361 and 363 printed; predictions on 212 + 153 H: True
+Schmidt et al. Figures 8 and 9: 9 means; two readings of We within 0.16 mm; r = 0.976 vs .97 printed: True

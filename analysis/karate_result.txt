@@ -1,0 +1,13 @@
+run started 2026-11-05 11:28:20 UTC
+Prediction 2, Kyokushin karate, joint coupling (analysis/plan_karate.md)
+recordings read 146, used 146, not used 0
+rates {250.0: 131, 200.0: 15}; edge frames trimmed in 3 recordings; interpolated gaps in 0
+athletes 37 of 37, left out []; athletes with one technique only 0
+recordings with a joint outside the 42 strongest links: 1
+H, degree shares of the 42 strongest links: mean 3.6893, sd 0.0287, range 3.6083 to 3.7340; ceiling log2 14 = 3.8074
+PRIMARY  partial Spearman of grade rank and H, age controlled: r = 0.3309, one-sided p = 0.9756, two-sided p = 0.0477  ->  AGAINST
+secondary (a) Spearman of grade rank and H without age: rho = 0.1149, two-sided p = 0.4984
+secondary (b) S01 only, n = 37: r = 0.3542, one-sided p = 0.9842, two-sided p = 0.0316 (against)
+secondary (b) S02 only, n = 37: r = 0.1530, one-sided p = 0.8142, two-sided p = 0.3686 (undecided)
+secondary (c) strength shares of the full network: mean H 3.7746, r = 0.2476, one-sided p = 0.9304, two-sided p = 0.1395 (undecided)
+grade and age: Spearman 0.866

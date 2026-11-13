@@ -1,0 +1,4 @@
+POST HOC diagnostic, not part of the verdict: the 131 recordings at 250 Hz resampled to 200 Hz
+H at 200 Hz minus H at 250 Hz: mean +0.0001, sd 0.0012, largest absolute 0.0131 bits; between-athlete sd of H 0.0287
+descriptive: Spearman of H and age -0.058; H as a share of its ceiling 0.948 to 0.981
+athletes recorded at 200 Hz: [['B0367', '4 dan', 48, 3.6601], ['B0368', '1 dan', 24, 3.7111], ['B0369', '3 dan', 50, 3.7027], ['B0370', '2 kyu', 20, 3.6871]]

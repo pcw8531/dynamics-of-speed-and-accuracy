@@ -1,0 +1,5 @@
+run started 2026-11-04T07:08:49Z
+rho(H, median_iki_ms) = 0.229, one-sided p = 0.1117, two-sided p = 0.2235, 95% interval [-0.164, 0.569]
+rho(H, corrections_per_char) = -0.214, one-sided p = 0.8717, two-sided p = 0.2566, 95% interval [-0.563, 0.194]
+verdict: undecided
+exit 0

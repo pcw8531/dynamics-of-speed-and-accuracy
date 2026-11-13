@@ -1,0 +1,7 @@
+run started 2026-11-04T07:06:24Z
+moves kept 2641, typists 30, markers 50
+faster: b = 35.25 ms/bit [23.24, 47.90], H = 5.6324 bits, beta = 6.258
+slower: b = 61.78 ms/bit [41.34, 70.80], H = 5.6344 bits, beta = 10.965
+rho = 0.571, 95% interval [0.369, 0.943]: against (interval excludes 1)
+exit 0
+run ended 2026-11-04T07:08:19Z

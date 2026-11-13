@@ -1,0 +1,7 @@
+Line through the nine values (Schmidt et al., 1979, Figure 9): W_e = 2.249 + 0.0303 D/MT, r = 0.9758
+Step 0: even shares over 20 elements, sum p^2 = 0.0500, H_2 = 4.322 bits, sigma_F/F = 0.2236 kappa (independent errors)
+Step 1,000: run 28, H = 3.0056 bits, sum p^2 = 0.1841, H_2 = 2.441 bits
+  independent errors (rbar = 0): sigma_F/F = 0.4291 kappa, slope ratio 1.919, slope 0.0581
+  slope of step 0 kept at rbar = -0.1644
+  slope lowered by the common factor 0.6972 at rbar = -0.1958, slope 0.0211, variance of the summed force 0.132 of that with independent errors
+  lowest rbar of a valid covariance at these shares: -0.2256
