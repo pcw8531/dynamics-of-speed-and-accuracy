@@ -7,10 +7,10 @@ fans out to the elements, each drawn above its block at the width of its share a
 follows the share (Assumption 1). B, the path of averaged information of the full model (fixed condition of Figure 5,
 20 elements, mean and interquartile band of 300 runs), with Leonard's (1954) months placed by the ratio of each slope to
 the slope of May (Equation 10): H = log2 20 x b(t)/b(May). The top axis names the months, and the right axis reads the
-same path as Leonard's slope, beta H(t) with beta = b(May)/log2 20. The networks drawn into the plot, reached by dotted
-arrows from May and December, are the coupling of the model at those two points, half transparent. The open circle
-marks step 200, where selective elimination begins. The note gives the fall of the slope from May to December, which by
-Equation 17 is also how much more time the six-choice task saved. The three markers at step 1,000 are the slopes of the
+same path as Leonard's slope, beta H(t) with beta = b(May)/log2 20. The networks drawn into the plot are the coupling of
+the model in May and in December, each centred on the point of its month, half transparent and behind the path. The open circle
+marks step 200, where selective elimination begins. The label gives the fall of averaged information and of the slope from May to December; by
+Equation 17 that fall of the slope is also how much more time the six-choice task saved. The three markers at step 1,000 are the slopes of the
 simulated performer of Supplemental Section S4.4 in the tasks of Hick, Hyman and Fitts, each divided by its slope at
 step 0 and read on the left axis. C, as A for December, from the run whose path lies nearest the mean, at the step
 where it reaches the averaged information of December, mirrored. An element whose block is taller than the row of
@@ -201,7 +201,7 @@ for a_, b_, x0, A_, mir in ((axA, axB, XL, states[0], False), (axD, axE, XR, sta
 
 # ---------------------------------------------------------------- B, one path, two readings
 ax = axC
-X0, X1, Y0, Y1 = -40, 1100, 2.42, 4.62
+X0, X1, Y0, Y1 = -135, 1100, 2.42, 4.74
 for x_ in range(0, 1001, 200):
     ax.axvline(x_, color="#E9EDEF", lw=0.5, zorder=0.5)
 for y_ in (2.5, 3.0, 3.5, 4.0, 4.5):
@@ -215,13 +215,12 @@ for m, h, s_, c in zip(MONTHS, target, step, (FIRST, MID, LAST)):
     ax.plot(s_, h, "o", ms=5.2, color=c, mec="white", mew=0.7, zorder=6)
 e = T_ELIM                                                           # where selective elimination begins
 ax.plot(e, HM[e], "o", ms=4.0, color="white", mec=INK, mew=0.7, zorder=6)
-ax.text(e - 25, HM[e] - 0.07, "elimination\nstarts", fontsize=5.8, ha="right", va="top", linespacing=0.95, zorder=7)
+ax.text(e + 6, HM[e] + 0.085, "elimination starts", fontsize=5.6, ha="left", va="bottom", zorder=7)
 xa = 1072                                                            # May to December
 ax.annotate("", xy=(xa, target[2]), xytext=(xa, target[0]), arrowprops=dict(arrowstyle="<->", lw=0.7, color=INK,
             mutation_scale=5, shrinkA=0, shrinkB=0), zorder=7)
-ax.text(757, 3.94, rf"$\Delta H$ = {target[0] - target[2]:.2f} bits," + "\n" f"{leo_b[0] - leo_b[2]:.0f} ms per bit,"
-        + "\n" f"{saved[1] - saved[0]:.0f} ms more" + "\n" "saved by six" + "\n" "choices", fontsize=5.4, ha="center", va="center",
-        linespacing=1.05, zorder=7)
+ax.text(750, 3.98, rf"$\Delta H$ = {target[0] - target[2]:.2f} bits" + "\n" f"{leo_b[0] - leo_b[2]:.0f} ms per bit", fontsize=5.1,
+        ha="center", va="center", linespacing=1.05, zorder=7)
 keys = []
 for (t_, mk), x_ in zip((("Hick", "s"), ("Hyman", "D"), ("Fitts", "^")), (972, 1000, 1028)):
     ax.plot(x_, RATIO[t_] * H0, mk, ms=3.0, mfc="white", mec=INK, mew=0.6, zorder=7)
@@ -247,15 +246,15 @@ for lab, c in zip(sec.get_yticklabels(), (FIRST, MID, LAST)):
     lab.set_color(EDGE if c == FIRST else c); lab.set_fontweight(WEIGHT)
 sec.spines["right"].set_visible(False)
 sec.set_ylabel(r"Leonard’s slope $\beta H(t)$, ms per bit", fontsize=6.8, labelpad=2)
-NETS = (((205, 3.80, 420, 0.84), states[0], FIRST, (0, target[0]), (292, 4.24)),
-        ((415, 2.40, 560, 0.90), states[2], LAST, (step[2], target[2]), (822, 3.00)))
-for (x0, y0, w, h), A_, c, P, Q in NETS:                             # the coupling itself, drawn into the plot
+SIDE = lambda s_in: (s_in / (WC / (X1 - X0)), s_in / ((HB + HA) / (Y1 - Y0)))   # a square of s_in inches, in steps and bits
+NETS = ((0.40, states[0], FIRST, (0, target[0]), 0.42),              # each network centred on the point of its month
+        (0.54, states[2], LAST, (step[2], target[2]), 0.46))
+for s_in, A_, c, P, size_ in NETS:
+    w, h = SIDE(s_in); x0, y0 = P[0] - w / 2, P[1] - h / 2                             # the coupling itself, drawn into the plot
     ins = ax.inset_axes([x0, y0, w, h], transform=ax.transData, zorder=1.5)
     ins.set_xlim(-1.2, 1.2); ins.set_ylim(-1.2, 1.2); ins.set_aspect("equal", adjustable="datalim"); ins.axis("off")
     ins.patch.set_alpha(0.0)
-    draw_network(ins, A_, shares(A_)[1], size=0.78, alpha=0.55)
-    ax.annotate("", xy=Q, xytext=P, arrowprops=dict(arrowstyle="-|>", lw=0.7, ls=(0, (1.2, 1.2)), color=c,
-                mutation_scale=5, shrinkA=4, shrinkB=0), zorder=7)
+    draw_network(ins, A_, shares(A_)[1], size=size_, alpha=0.55)
 S.head("A", "May, even coupling", XL + WS / 2, y=FH - 0.13)
 S.head("B", "Leonard on the path of $H(t)$", XC + WC / 2, y=FH - 0.13)
 S.head("C", "December, concentrated coupling", XR + WS / 2, y=FH - 0.13)

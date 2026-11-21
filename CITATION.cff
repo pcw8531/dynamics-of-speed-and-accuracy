@@ -8,6 +8,7 @@ abstract: >-
   Code and derived data behind the paper. The simulations of the minimal and
   the full model of practice, the classical laws of Hick, Hyman and Fitts and
   the impulse-variability equation as static cases of one simulated performer,
+  the selection of a command as a race among the elements of the motor system,
   the values transcribed from the published records, the plan, script and
   output of each analysis of four open datasets, one script and one notebook
   for each figure, and every output as run. No data were collected for this
@@ -21,9 +22,9 @@ authors:
       Department of Physical Education, Seoul National University,
       Seoul, Republic of Korea
 license: MIT
-version: 1.0.1
+version: 1.1.0
 doi: 10.5281/zenodo.24184851
-date-released: 2026-11-13
+date-released: 2026-11-21
 url: >-
   https://github.com/pcw8531/dynamics-of-speed-and-accuracy
 repository-code: >-

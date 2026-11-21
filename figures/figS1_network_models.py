@@ -135,7 +135,7 @@ for m in SHOW:                                                       # the share
     axB.plot(k_, ccdf, ls="none", ms=2.6, label=NAME[m], zorder=3, **MK[m])
 kk_ = np.array([2.0, 200.0]); axB.plot(kk_, 4.0 * kk_ ** -2.0, color=INK, lw=0.7, ls=(0, (3.0, 1.6)))
 axB.text(30, 4.0 * 30.0 ** -2.0 * 1.6, "$k^{-2}$", fontsize=6.4, ha="left", va="bottom")
-axB.set_xscale("log"); axB.set_yscale("log"); axB.set_xlim(1, 300); axB.set_ylim(2e-5, 1.5)
+axB.set_xscale("log"); axB.set_yscale("log"); axB.set_xlim(0.8, 300); axB.set_ylim(2e-5, 1.5)   # the point at k = 1 whole
 axB.set_xticks([1, 10, 100]); axB.set_yticks([1e-4, 1e-2, 1])
 axB.xaxis.set_minor_locator(mpl.ticker.NullLocator()); axB.yaxis.set_minor_locator(mpl.ticker.NullLocator())
 for sp in ("left", "right"):

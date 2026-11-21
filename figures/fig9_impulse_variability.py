@@ -3,8 +3,8 @@
 A, the nine effective widths read from Schmidt et al. (1979, Figure 9), marker shape by movement time and colour
 deepening with velocity as in Figure 1D (style.demand_colour), with the line the authors reported, W_e = 2.12 + 0.033
 D/MT, and the law at step 0, the least-squares line through the values, with even shares and independent errors.
-B, the force of an act shared among 20 elements in proportion to their shares, each element a block of width p_i drawn
-in outline in the colour of log2(p_i N) on the scale of Figure 2, as the blocks of Figure 7B: even shares at step 0 and
+B, the force of an act shared among 20 elements in proportion to their shares, each element a block of width p_i filled
+in the colour of log2(p_i N) on the scale of Figure 2, as the blocks of Figure 7B: even shares at step 0 and
 the shares of the simulated performer at step 1,000 (sim_out/sim_static_cases.npz, p1000, the run whose H lies nearest
 the mean of 300 runs). To the right of each bar, the spread of the summed force from Equation 22,
 sigma_F / F = kappa [S + (1 - S) rbar]^(1/2) with S = sum p_i^2 and rbar the share-weighted mean correlation of the
@@ -27,7 +27,7 @@ from matplotlib.patches import Rectangle
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from style import Sheet, INK, GREY, EDGE, RULE, TONE, share_colour, outline, demand_colour, tb_axes, save_panels, CLEAR  # noqa: E402
+from style import Sheet, INK, GREY, EDGE, RULE, TONE, share_colour, demand_colour, tb_axes, save_panels, CLEAR  # noqa: E402
 sys.path.insert(0, str(ROOT / "code"))
 import force_spread as fs  # noqa: E402
 
@@ -58,7 +58,7 @@ def bar(y, p, label):
     for pi in p:
         if pi <= 0:
             continue
-        ax.add_patch(Rectangle((x, y), WBAR * pi, HBAR, fc="none", ec=outline(share_colour(np.log2(pi * N))), lw=0.7,
+        ax.add_patch(Rectangle((x, y), WBAR * pi, HBAR, fc=share_colour(np.log2(pi * N)), ec=EDGE, lw=0.3,
                                zorder=3 + pi))
         x += WBAR * pi
     ax.text(X0, y + HBAR + 0.22, label, fontsize=6.6, ha="left", va="bottom")
@@ -67,6 +67,9 @@ def bar(y, p, label):
 def curve(xc, y, sd, **kw):
     """A normal density of unit area for the summed force, sd in units of kappa, drawn on the baseline y."""
     u = np.linspace(-1.05, 1.05, 160)
+    fill = kw.pop("fill", None)
+    if fill is not None:                                             # the spread read as an area
+        ax.fill_between(xc + 1.55 * u, y, y + 0.13 * np.exp(-0.5 * (u / sd) ** 2) / sd, color=fill, lw=0, zorder=1)
     ax.plot(xc + 1.55 * u, y + 0.13 * np.exp(-0.5 * (u / sd) ** 2) / sd, **kw)
 
 
@@ -75,9 +78,9 @@ bar(1.75, p1, "step 1,000, shares of the simulated performer")
 XC, XL = 6.35, 8.15                                                  # centre of the curves, column of their labels
 for y in (4.55, 1.75):
     ax.plot([XC - 1.65, XC + 1.65], [y, y], color=EDGE, lw=0.5)
-curve(XC, 4.55, fs.spread(S0, 0.0), color=INK, lw=0.9)
+curve(XC, 4.55, fs.spread(S0, 0.0), color=INK, lw=0.9, fill=share_colour(0.0))
 curve(XC, 1.75, fs.spread(S1, 0.0), color=OPEN, lw=0.9, ls=(0, (3.0, 1.6)))
-curve(XC, 1.75, fs.spread(S1, R_KEEP), color=INK, lw=0.9)
+curve(XC, 1.75, fs.spread(S1, R_KEEP), color=INK, lw=0.9, fill=share_colour(0.0))
 mn = lambda v: f"{v:.2f}".replace("-", "\u2212")
 ax.text(XL, 4.55 + 0.42, rf"$\bar r$ = 0, {fs.spread(S0, 0.0):.2f}$\kappa$", fontsize=6.2, ha="left", va="center")
 ax.text(XL, 1.75 + 0.56, rf"$\bar r$ = {mn(R_KEEP)}, {fs.spread(S1, R_KEEP):.2f}$\kappa$", fontsize=6.2, ha="left",

@@ -1,0 +1,52 @@
+Shares of the full model (fixed condition, seed 0)
+  step     0  H = 4.322 bits  active elements = 20  largest share = 0.050
+  step   100  H = 4.187 bits  active elements = 20  largest share = 0.117
+  step   200  H = 4.124 bits  active elements = 20  largest share = 0.135
+  step   500  H = 3.892 bits  active elements = 20  largest share = 0.176
+  step  1000  H = 3.128 bits  active elements = 19  largest share = 0.306
+  step  2000  H = 2.001 bits  active elements = 11  largest share = 0.404
+  step  3000  H = 1.652 bits  active elements = 4  largest share = 0.416
+
+One command, head starts ln p_j, criterion theta = 3.0 (error bound exp(-theta) = 0.0498), 20,000 trials per step
+  step     0  H = 4.322  mean time = 6.003  predicted theta/v + ln2 H/v = 5.996  error = 0.0229
+  step   100  H = 4.187  mean time = 5.939  predicted theta/v + ln2 H/v = 5.902  error = 0.0202
+  step   200  H = 4.124  mean time = 5.864  predicted theta/v + ln2 H/v = 5.859  error = 0.0197
+  step   500  H = 3.892  mean time = 5.710  predicted theta/v + ln2 H/v = 5.697  error = 0.0197
+  step  1000  H = 3.128  mean time = 5.190  predicted theta/v + ln2 H/v = 5.168  error = 0.0183
+  step  2000  H = 2.001  mean time = 4.420  predicted theta/v + ln2 H/v = 4.387  error = 0.0157
+  step  3000  H = 1.652  mean time = 4.181  predicted theta/v + ln2 H/v = 4.145  error = 0.0140
+  mean time on H over the 7 steps: intercept 3.049 (theta/v = 3.000), slope 0.6849 per bit (ln 2 / v = 0.6931), r = 0.9999
+  time of an element on its information I_i (106 elements with 200 or more correct trials): intercept 3.041, slope 0.6983 per bit, r = 0.9838
+  in the units of the paper (beta = 21.9 ms per bit): slope 21.7 ms per bit, mean time from 190 ms at step 0 to 132 ms at step 3,000
+
+One command, head starts ln p_j, criterion theta = 4.0 (error bound exp(-theta) = 0.0183), 20,000 trials per step
+  step     0  H = 4.322  mean time = 7.033  predicted theta/v + ln2 H/v = 6.996  error = 0.0090
+  step   100  H = 4.187  mean time = 7.013  predicted theta/v + ln2 H/v = 6.902  error = 0.0077
+  step   200  H = 4.124  mean time = 6.910  predicted theta/v + ln2 H/v = 6.859  error = 0.0069
+  step   500  H = 3.892  mean time = 6.740  predicted theta/v + ln2 H/v = 6.697  error = 0.0074
+  step  1000  H = 3.128  mean time = 6.216  predicted theta/v + ln2 H/v = 6.168  error = 0.0074
+  step  2000  H = 2.001  mean time = 5.417  predicted theta/v + ln2 H/v = 5.387  error = 0.0056
+  step  3000  H = 1.652  mean time = 5.191  predicted theta/v + ln2 H/v = 5.145  error = 0.0056
+  mean time on H over the 7 steps: intercept 4.021 (theta/v = 4.000), slope 0.7026 per bit (ln 2 / v = 0.6931), r = 0.9995
+  time of an element on its information I_i (106 elements with 200 or more correct trials): intercept 4.173, slope 0.6666 per bit, r = 0.9762
+  in the units of the paper (beta = 21.9 ms per bit): slope 22.2 ms per bit, mean time from 222 ms at step 0 to 164 ms at step 3,000
+
+Equal shares, theta = 3.0: mean time on log2 N, 20,000 trials each
+  N =  2  log2 N = 1  mean time = 3.773  error = 0.0107
+  N =  4  log2 N = 2  mean time = 4.413  error = 0.0177
+  N =  8  log2 N = 3  mean time = 5.092  error = 0.0204
+  N = 16  log2 N = 4  mean time = 5.784  error = 0.0210
+  N = 32  log2 N = 5  mean time = 6.518  error = 0.0225
+  intercept 3.058, slope 0.6861 per bit (ln 2 / v = 0.6931), r = 0.9997
+
+Head starts that do not match the commands, theta = 3.0, 20,000 trials each
+  commands of step 3,000, head starts of step 3,000 (matched): mean time = 4.172, predicted theta/v + ln2 L/v = 4.145 with L = 1.652 bits (H = 1.652), error = 0.0162
+  commands of step 3,000, equal head starts: mean time = 4.425, predicted theta/v + ln2 L/v = 4.386 with L = 2.000 bits (H = 1.652), error = 0.0155
+  commands of step 3,000, head starts of step 500: mean time = 4.257, predicted theta/v + ln2 L/v = 4.210 with L = 1.746 bits (H = 1.652), error = 0.0153
+  commands of step 0, head starts of step 0 (matched): mean time = 5.962, predicted theta/v + ln2 L/v = 5.996 with L = 4.322 bits (H = 4.322), error = 0.0201
+
+An act of two commands, one race among their sequences, theta = 3.0, 4,000 trials per step
+  step     0  2 H = 8.644 bits  mean time = 9.014  predicted theta/v + ln2 2 H/v = 8.991  error = 0.0205
+  step   500  2 H = 7.783 bits  mean time = 8.384  predicted theta/v + ln2 2 H/v = 8.395  error = 0.0215
+  step  3000  2 H = 3.304 bits  mean time = 5.300  predicted theta/v + ln2 2 H/v = 5.290  error = 0.0222
+  acts of one and of two commands together, mean time on the bits of the act: intercept 3.033, slope 0.6896 per bit, r = 1.0000

@@ -15,7 +15,7 @@ from matplotlib.patches import FancyBboxPatch, Polygon, FancyArrowPatch
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from style import Sheet  # noqa: E402
+from style import Sheet, share_colour  # noqa: E402
 
 K = "#000000"                                                      # every line and letter of the chart in black
 FW, FH = 6.5, 1.62
@@ -25,9 +25,11 @@ FS, FK = 6.2, 5.6                                                  # text of the
 
 
 # ---------------------------------------------------------------- shapes
-def box(xc, yc, w, h, lines, key=None):
-    ax.add_patch(FancyBboxPatch((xc - w / 2, yc - h / 2), w, h, fc="white", ec=K, lw=0.6,
-                                boxstyle="round,pad=0,rounding_size=0.04", zorder=3))
+def box(xc, yc, w, h, lines, key=None, kind="process"):
+    """A box of the chart. As in Figure 11A, a box that holds the state of the coupling is filled with the colour of an
+    even share, the box of the law has a heavier border, and every operation is a plain box."""
+    ax.add_patch(FancyBboxPatch((xc - w / 2, yc - h / 2), w, h, fc=share_colour(0.0) if kind == "state" else "white", ec=K,
+                                lw=1.1 if kind == "law" else 0.6, boxstyle="round,pad=0,rounding_size=0.04", zorder=3))
     n = len(lines)
     for j, ln in enumerate(lines):
         ax.text(xc, yc + (n - 1) * 0.052 - j * 0.104, ln, fontsize=FS, ha="center", va="center", color=K, zorder=4)
@@ -65,15 +67,15 @@ W = dict(net=0.92, step=0.46, rec=0.64, form=0.72, elim=0.66, share=0.56, law=0.
 H_BOX, H_DIA, H_NET = 0.32, 0.42, 0.56
 
 box(X["net"], M, W["net"], H_NET, ["network at step 0", r"$N$ elements, links $A_{ij}$", r"$k_i$ and $\eta_i$",
-                                    r"$H(0) = \log_2 N$"], key="1 to 3")
+                                    r"$H(0) = \log_2 N$"], key="1 to 3", kind="state")
 box(X["step"], M, W["step"], 0.30, ["practice", r"step $t$"], key="4")
 diamond(X["rec"], M, W["rec"], H_DIA, ["recruit", r"at $t$?"], key="5")
 box(X["rec"], SIDE, W["side"], H_BOX, ["recruitment", r"$m$ links, by $\eta_j k_j$"], key="6")
 box(X["form"], M, W["form"], H_BOX, ["formation", r"one link, by $\Pi_i$"], key="7, 8")
 diamond(X["elim"], M, W["elim"], H_DIA, [r"$t \geq 200$,", "full model?"], key="9")
 box(X["elim"], SIDE, W["side"], H_BOX, ["elimination", r"one end by $1/\eta_i$"], key="10")
-box(X["share"], M, W["share"], H_BOX, [r"shares $p_i$", r"and $H(t)$"], key="11")
-box(X["law"], M, W["law"], H_BOX, [r"$b(t) = \beta H(t)$", r"$T = a + \beta H(t)\,\log_2 X$"], key="12")
+box(X["share"], M, W["share"], H_BOX, [r"shares $p_i$", r"and $H(t)$"], key="11", kind="state")
+box(X["law"], M, W["law"], H_BOX, [r"$b(t) = \beta H(t)$", r"$T = a + \beta H(t)\,\log_2 X$"], key="12", kind="law")
 diamond(X["last"], M, W["last"], H_DIA, [r"$t$ < last", "step?"], key="4")
 box(X["last"], SIDE, W["out"], H_BOX, ["output", r"$H(t)$ and $T(t)$"], key="13")
 

@@ -61,11 +61,15 @@ for d in range(3):
             if on:
                 ax.text((xp + xc) / 2 + (0.16 if c else -0.16), (LEV[d] + LEV[d + 1]) / 2, str(c), fontsize=6.4,
                         ha="left" if c else "right", va="center")
+BITS = demand_colour(np.arange(4.0), 0, 3)                  # the colour of 0 to 3 bits, as the markers of A
 for d in range(3):
-    for xp in nodes[d][0]:
-        ax.add_patch(Circle((xp, LEV[d]), 0.09, fc=EDGE, ec="none", zorder=4))
-for k, xp in enumerate(XL):
-    ax.add_patch(Circle((xp, LEV[3]), 0.24, fc=INK if k == pick else "white", ec=EDGE, lw=0.6, zorder=4))
+    for j, xp in enumerate(nodes[d][0]):
+        if path[d] == j:                                    # a node of the path: the bits chosen so far
+            ax.add_patch(Circle((xp, LEV[d]), 0.15, fc=BITS[d], ec=EDGE, lw=0.6, zorder=5))
+        else:
+            ax.add_patch(Circle((xp, LEV[d]), 0.09, fc=EDGE, ec="none", zorder=4))
+for k, xp in enumerate(XL):                                 # the lights: an even share each, the one picked at 3 bits
+    ax.add_patch(Circle((xp, LEV[3]), 0.24, fc=BITS[3] if k == pick else share_colour(0.0), ec=EDGE, lw=0.6, zorder=4))
 for d in range(3):                                          # one command for each halving
     ym = (LEV[d] + LEV[d + 1]) / 2
     ax.text(6.05, ym, f"halving {d + 1}", fontsize=6.6, ha="left", va="center")
@@ -87,10 +91,9 @@ ax.legend(handles=[Line2D([], [], ls="", marker="o", ms=3.0, mfc=demand_colour(1
                    Line2D([], [], color=OPEN, lw=0.9, ls=(0, (3.0, 1.6))), Line2D([], [], color=INK, lw=1.0),
                    Line2D([], [], color=TONE["small-world"], lw=0.9)],
           labels=["G. C., observed", "Hyman’s line", "law, step 0", "law, step 1,000"], loc="upper left",
-          bbox_to_anchor=(-0.02, 0.83),
+          bbox_to_anchor=(-0.02, 0.89),
           fontsize=5.9, handletextpad=0.3, borderaxespad=0.1, labelspacing=0.12, handlelength=1.4)
-ax.text(-0.05, 742, rf"$RT$ = {a:.0f} + {b:.0f} $\log_2 n$", fontsize=6.6, ha="left", **CLEAR)
-ax.text(-0.05, 688, f"r = {r:.3f}".replace("0.", "."), fontsize=6.6, ha="left", style="italic", **CLEAR)
+ax.text(-0.05, 742, rf"$RT$ = {a:.0f} + {b:.0f} $\log_2 n$,  $r$ = " + f"{r:.3f}".replace("0.", "."), fontsize=6.6, ha="left", **CLEAR)
 tb_axes(ax, xticks=[0, 1.5, 3], xlim=(-0.15, 3.2), yticks=[200, 450, 700], ylim=(150, 800))
 ax.set_xlabel(r"$\log_2 n$, bits", labelpad=1); ax.set_ylabel("reaction time, ms", labelpad=1.5)
 top = ax.secondary_xaxis("top"); top.set_xticks(np.log2([1, 2, 4, 8])); top.set_xticklabels(["1", "2", "4", "8"])

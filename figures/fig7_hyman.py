@@ -1,8 +1,9 @@
 """Figure 7 of the manuscript: the Hick–Hyman law as the static case of the dynamic law.
 
 B, the two averaged informations whose product sets the slope (Equation 19): the lights of Hyman's (1953) Experiment II,
-Condition 5 (probabilities 1/2, 1/4, 1/8, 1/8, the shares of the hub in Figure 2D), each drawn as a block of width q_j
-and height -log2 q_j with its codeword, and even coupling over four elements, as in Figure 2A. A, participant G. C.,
+Condition 5 (probabilities 1/2, 1/4, 1/8, 1/8), each drawn as a block of width q_j and height -log2 q_j with its
+codeword, and even coupling over four elements. The blocks are filled in the colour of log2(q_j n) or log2(p_i N) on
+the scale of Figure 2, as the blocks of that figure are. A, participant G. C.,
 all 24 conditions of Experiments I to III, read from Hyman's Figure 1, marker colour deepening with the stimulus
 information (style.demand_colour), with the slope of each experiment, the line Hyman printed for this participant,
 RT = 212 + 153 H, and the law in the simulated performer of Supplemental Section S4.4, least-squares lines through its
@@ -22,7 +23,7 @@ from matplotlib.lines import Line2D
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from style import Sheet, INK, GREY, EDGE, RULE, TONE, share_colour, outline, demand_colour, tb_axes, save_panels, CLEAR  # noqa: E402
+from style import Sheet, INK, GREY, EDGE, RULE, TONE, share_colour, demand_colour, tb_axes, save_panels, CLEAR  # noqa: E402
 
 RF, T = ROOT / "data" / "read_from_figures", ROOT / "data" / "transcribed"
 e1 = pd.read_csv(RF / "hyman1953_fig1_GC_experiment1.csv")
@@ -54,14 +55,14 @@ def ink_on(rgba):
 
 
 def blocks(ax, q, codes, xlabel, hlabel, ylabel=True, label_left=False):
-    """Blocks of width q and height -log2 q, drawn in outline in the colour of log2(q n), each with its codeword."""
+    """Blocks of width q and height -log2 q, filled in the colour of log2(q n) as in Figure 2, each with its codeword."""
     q = np.asarray(q, float); n = len(q); I = -np.log2(q); H = float((q * I).sum()); cum = 0.0
     for qi, Ii, cw in zip(q, I, codes):
-        c = outline(share_colour(np.log2(qi * n)))
-        ax.add_patch(Rectangle((cum, 0), qi, Ii, fc="none", ec=c, lw=1.1, zorder=3 + Ii / 10))
+        c = share_colour(np.log2(qi * n))
+        ax.add_patch(Rectangle((cum, 0), qi, Ii, fc=c, ec=EDGE, lw=0.45, zorder=3 + Ii / 10))
         up = qi < 0.2
         ax.text(cum + qi / 2, min(Ii / 2, (H - 0.15) / 2) if up and Ii > H else Ii / 2, cw, rotation=90 if up else 0,
-                fontsize=6.3, ha="center", va="center", color=INK, zorder=7)
+                fontsize=6.3, ha="center", va="center", color=ink_on(c), zorder=7)
         cum += qi
     ax.plot([0, 1], [H, H], color=INK, lw=1.2, zorder=8)
     if label_left:                                                   # clear of the taller blocks on the right
@@ -106,11 +107,10 @@ LBL = (0.80, 232)                                          # one label, a leader
 for xb, yb in two:
     ax.annotate("", xy=(xb, yb), xytext=LBL, arrowprops=dict(arrowstyle="-", lw=0.5, color=RULE, shrinkA=3, shrinkB=2.6))
 ax.text(LBL[0], LBL[1], "two lights", fontsize=6.2, ha="center", va="top")
-ax.text(-0.05, 748, rf"$RT$ = {aj:.0f} + {bj:.0f} $H_S$", fontsize=6.6, ha="left", **CLEAR)
-ax.text(-0.05, 694, f"r = {rj:.3f}".replace("0.", "."), fontsize=6.6, ha="left", style="italic", **CLEAR)
+ax.text(-0.05, 748, rf"$RT$ = {aj:.0f} + {bj:.0f} $H_S$,  $r$ = " + f"{rj:.3f}".replace("0.", "."), fontsize=6.6, ha="left", **CLEAR)
 handles = [Line2D([], [], ls="none", mfc="white", mec=EDGE, mew=0.6, **STY[e]) for e in ("I", "II", "III")]
 leg = ax.legend(handles, [f"{LAB[e]}, {fit[e][0]:.0f}" for e in ("I", "II", "III")], loc="upper left",
-                bbox_to_anchor=(-0.02, 0.80), fontsize=5.9, handletextpad=0.2, borderaxespad=0.1, labelspacing=0.12,
+                bbox_to_anchor=(-0.02, 0.86), fontsize=5.9, handletextpad=0.2, borderaxespad=0.1, labelspacing=0.12,
                 handlelength=1.0, title="slope, ms per bit", title_fontsize=5.9)
 ax.add_artist(leg)
 ax.legend([Line2D([], [], color=OPEN, lw=0.9, ls=(0, (3.0, 1.6))), Line2D([], [], color=INK, lw=1.0),

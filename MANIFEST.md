@@ -12,19 +12,21 @@ the terms of their source, as the section Licence of the data below sets out.
 - code/: sim_practice.py (minimal model, Figure 4), sim_full.py (full model, Figures 5 and 11, Section S5.3), sim_lambda.py
   (directed practice, Section S5.3), urn_check.py (Section S3.2), sim_static_cases.py (the classical laws in one
   simulated performer, Section S4.4), force_spread.py (the impulse-variability equation at two steps of practice,
-  Section S4.5, Figure 9), sim_composition.py, sim_flows.py and sim_networks.py (where the coupling goes, Figures 4B
+  Section S4.5, Figure 9), sim_race.py (the selection of a command as a race among the elements, the fifth
+  simulation experiment, Section S8, Figure S5), sim_composition.py, sim_flows.py and sim_networks.py (where the coupling goes, Figures 4B
   and 5B), network_models.py (the five network models of Table S3, Section S2.1), check_transcriptions.py,
   read_figures.py, README_sim_full.md.
 - sim_out/: the outputs of the simulations as run.
 - figures/: one script and one image per figure, with the shared palette and type in style.py. Manuscript Figures 1
   to 11 (fig1_classical_laws, fig2_mechanism, fig3_practice_step, fig4_minimal_model, fig5_full_model, fig6_hick,
   fig7_hyman, fig8_fitts, fig9_impulse_variability, fig10_slope_reading, fig11_system_model), Supplemental Figures S1
-  to S4 (figS1_network_models, figS2_static_cases, figS3_practice_tables, figS4_open_records), and the figures of the
+  to S5 (figS1_network_models, figS2_static_cases, figS3_practice_tables, figS4_open_records, figS5_selection_race), and the figures of the
   analyses of Section S7 as run (fig_p2_p4_howwetype, fig_throwing, fig_karate, fig_p5_axon). figures/panels/ holds
-  every lettered panel of Figures 1, 2, 4 to 11 and S1 to S4 as its own image, and fig2_centre the unlettered strip of
+  every lettered panel of Figures 1, 2, 4 to 11 and S1 to S5 as its own image, and fig2_centre the unlettered strip of
   Figure 2. Figure 3 is one chart without panels and is placed whole.
-- notebooks/: one notebook for each figure of the manuscript and the Supplemental Material, 15 in all, with the code
-  of its script and the values that the code prints, and no stored plot.
+- notebooks/: one notebook for each figure of the manuscript and the Supplemental Material, 16 in all, with the code
+  of its script, the values that the code prints and the figure it draws, shown in the notebook. A last cell sets the
+  printed values beside those of the paper. The notebooks write no file.
 - tools/: make_notebooks.py, which writes and runs the notebooks.
 - data/transcribed/: values transcribed from published tables, each with its page, read twice. Woodworth (1899)
   Tables I to IV, Fitts (1954) Tables 1 to 3, Hyman (1953) Tables 1 and 2 and the component times of p. 194, Mowbray

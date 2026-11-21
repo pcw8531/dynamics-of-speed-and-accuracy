@@ -44,7 +44,8 @@ for x_, g in ((0, "slower"), (1, "faster")):
     ax.plot([x_, x_], [lo, hi], color=EDGE, lw=0.9, zorder=2)
     ax.plot(x_, b, "o", ms=5.0, mfc=TONE["random"] if g == "slower" else INK,
             mec="white", mew=0.5, zorder=3)
-    ax.text(x_ + 0.08, b, f"{b:.0f}", fontsize=6.6, ha="left", va="center")
+    ax.text(x_ + (0.08 if g == "faster" else -0.08), b, f"{b:.0f}", fontsize=6.6, ha="left" if g == "faster" else "right",
+            va="center")                                             # outside the pair, clear of the arrow
 ax.annotate("", xy=(0.92, grp["faster"][0]), xytext=(0.08, grp["slower"][0]),
             arrowprops=dict(arrowstyle="-|>", mutation_scale=7, lw=0.7, color=GREY, ls=(0, (2.0, 1.5))))
 ax.text(0.5, (grp["faster"][0] + grp["slower"][0]) / 2 + 10, f"ratio {grp['faster'][0] / grp['slower'][0]:.2f}",
